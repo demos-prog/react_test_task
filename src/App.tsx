@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./null_styles.css";
-import HomePage from "./pages/home/HomePage";
+import HomePage from "./pages/HomePage/HomePage";
 import NotFoundPage from "./pages/NotFound/NotFoundPage";
 import PostInfo from "./components/PostInfo/PostInfo";
 import Posts from "./components/Posts/Posts";
