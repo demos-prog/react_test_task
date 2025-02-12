@@ -1,9 +1,13 @@
 import { Outlet, useNavigate } from "react-router-dom";
+import { useGetAllPostsQuery } from "../../api/posts";
 import css from "./HomePage.module.css";
 
-function HomePage() {
+const  HomePage:React.FC = () => {
+  const { data: posts, isLoading, error } = useGetAllPostsQuery();
   const navigate = useNavigate();
 
+  console.log(posts);
+  
   return (
     <>
       <div id={css.wrapper}>
