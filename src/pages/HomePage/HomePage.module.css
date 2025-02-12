@@ -10,3 +10,14 @@
   position: relative;
 }
 
+header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 30px;
+  background-color: var(--green);
+  color: var(--white);
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  margin-bottom: 30px;
+}

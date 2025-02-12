@@ -1,11 +1,13 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Provider } from "react-redux";
 import "./null_styles.css";
+import "./App.css";
 import HomePage from "./pages/HomePage/HomePage";
 import NotFoundPage from "./pages/NotFound/NotFoundPage";
 import PostInfo from "./components/PostInfo/PostInfo";
 import Posts from "./components/Posts/Posts";
-import { Provider } from 'react-redux';
-import { store } from './store';
+import SighnIn from "./components/SighnIn/SighnIn";
+import { store } from "./store";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "/post/:id",
         element: <PostInfo />,
+      },
+      {
+        path: "/sighnin",
+        element: <SighnIn />,
       },
     ],
   },

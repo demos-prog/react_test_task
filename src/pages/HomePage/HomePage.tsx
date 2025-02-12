@@ -7,7 +7,10 @@ const HomePage: React.FC = () => {
   return (
     <>
       <div id={css.wrapper}>
-        <h1>Header</h1>
+        <header>
+          <h1>Some Blog</h1>
+          <button onClick={() => navigate("/sighnin")}>Sighn in</button>
+        </header>
         <Outlet />
       </div>
     </>
