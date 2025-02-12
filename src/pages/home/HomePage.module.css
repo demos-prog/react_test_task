@@ -1,0 +1,94 @@
+:root {
+  --green: #16c47f;
+  --orange: #ff9d23;
+  --white: #fff;
+}
+
+#wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.loadingText {
+  margin: 0 0 20px 20px;
+}
+
+.contentWrapper {
+  position: relative;
+  padding:20px;
+  display: flex;
+  flex-wrap: nowrap;
+  min-height: calc(100vh - 150px);
+  gap: 20px;
+}
+
+.grid {
+  justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+}
+
+.certainItem {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+}
+
+.pagination {
+  user-select: none;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.pagination button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 100dvw;
+  height: 100dvh;
+}
+
+.pageButton {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pageButton:disabled {
+  cursor: default;
+}
+
+.pageButton > img {
+  width: 20px;
+  height: 20px;
+}
