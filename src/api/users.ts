@@ -11,6 +11,9 @@ export const userApi = createApi({
       query: (name) => ({
         url: `/users?username=${name}`,
         method: "POST",
+        body: {
+          userName: name,
+        },
       }),
     }),
   }),

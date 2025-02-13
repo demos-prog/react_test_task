@@ -1,6 +1,4 @@
 export default interface User {
-  login: string;
-  password: string;
-  role: "OWNER";
+  userName: string,
   id: number;
 }

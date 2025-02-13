@@ -4,8 +4,7 @@ import css from "./SignIn.module.css";
 
 const SighnIn: React.FC = () => {
   const [userName, setUserName] = useState("");
-  const [createUser, { data: user, isLoading, error }] =
-    useCreateUserMutation();
+  const [createUser, { isLoading }] = useCreateUserMutation();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -17,7 +16,7 @@ const SighnIn: React.FC = () => {
       const result = await createUser(userName).unwrap();
       console.log(result);
     } catch (err) {
-      console.log('Failed to create user:', err);
+      console.log("Failed to create user:", err);
     }
   };
 
