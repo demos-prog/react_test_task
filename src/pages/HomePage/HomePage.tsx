@@ -9,10 +9,6 @@ const HomePage: React.FC = () => {
   const dispatch = useDispatch();
   const currentUser = useSelector((state: RootState) => state.user.currentUser);
 
-  const handleLogout = () => {
-    dispatch(logout());
-  };
-
   return (
     <div id={css.wrapper}>
       <header>
@@ -20,7 +16,7 @@ const HomePage: React.FC = () => {
         {currentUser ? (
           <>
             <span>Welcome, {currentUser.userName}!</span>
-            <button className={css.signBtn} onClick={handleLogout}>
+            <button className={css.signBtn} onClick={() => dispatch(logout())}>
               Log out
             </button>
           </>
