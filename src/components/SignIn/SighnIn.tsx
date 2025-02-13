@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useCreateUserMutation } from "../../api/users";
 import css from "./SignIn.module.css";
 
 const SighnIn: React.FC = () => {
   const [userName, setUserName] = useState("");
   const [createUser, { isLoading }] = useCreateUserMutation();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -14,7 +16,9 @@ const SighnIn: React.FC = () => {
     }
     try {
       const result = await createUser(userName).unwrap();
-      console.log(result);
+      if (result) {
+        navigate("/");
+      }
     } catch (err) {
       console.log("Failed to create user:", err);
     }

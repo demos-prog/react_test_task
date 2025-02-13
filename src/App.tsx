@@ -7,7 +7,7 @@ import NotFoundPage from "./pages/NotFound/NotFoundPage";
 import PostInfo from "./components/PostInfo/PostInfo";
 import Posts from "./components/Posts/Posts";
 import SighnIn from "./components/SignIn/SighnIn";
-import { store } from "./store";
+import { store } from "./store/store";
 
 const router = createBrowserRouter([
   {
