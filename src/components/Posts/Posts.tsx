@@ -7,7 +7,7 @@ import PageButtons from "../PageButtons/PageButtons";
 const Posts: React.FC = () => {
   const [page, setPage] = useState(1);
   const { data: posts, isLoading, error } = useGetAllPostsQuery();
-  const POSTS_PER_PAGE = 10;
+  const POSTS_PER_PAGE = 9;
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error</div>;
@@ -19,7 +19,7 @@ const Posts: React.FC = () => {
   const currentPosts = posts.slice(startIndex, endIndex);
 
   return (
-    <>
+    <div className={css.bodyWrap}>
       <PageButtons totalPages={totalPages} page={page} setPage={setPage} />
       <div className={css.postsWrap}>
         {currentPosts.map((post) => (
@@ -27,7 +27,7 @@ const Posts: React.FC = () => {
         ))}
       </div>
       <PageButtons totalPages={totalPages} page={page} setPage={setPage} />
-    </>
+    </div>
   );
 };
 

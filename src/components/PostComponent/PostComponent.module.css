@@ -5,6 +5,8 @@
   padding: 16px;
   margin: 16px;
   transition: transform 0.2s ease-in-out;
+  width: 360px;
+  cursor: pointer;
 }
 
 .postCard:hover {
@@ -27,7 +29,7 @@
   margin-bottom: 8px;
 }
 
-.postdescribtion {
+.postDescription {
   color: #666;
   font-size: 0.9rem;
   line-height: 1.5;

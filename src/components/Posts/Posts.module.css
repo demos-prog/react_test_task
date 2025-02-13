@@ -1,0 +1,12 @@
+.bodyWrap{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.postsWrap{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
