@@ -6,7 +6,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import NotFoundPage from "./pages/NotFound/NotFoundPage";
 import PostInfo from "./components/PostInfo/PostInfo";
 import Posts from "./components/Posts/Posts";
-import SighnIn from "./components/SighnIn/SighnIn";
+import SighnIn from "./components/SignIn/SighnIn";
 import { store } from "./store";
 
 const router = createBrowserRouter([
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
         element: <PostInfo />,
       },
       {
-        path: "/sighnin",
+        path: "/signin",
         element: <SighnIn />,
       },
     ],

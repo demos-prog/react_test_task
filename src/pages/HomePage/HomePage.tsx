@@ -8,7 +8,7 @@ const HomePage: React.FC = () => {
     <div id={css.wrapper}>
       <header>
         <h1>Some Blog</h1>
-        <button onClick={() => navigate("/sighnin")}>Sighn in</button>
+        <button className={css.signBtn} onClick={() => navigate("/signin")}>Sign in</button>
       </header>
       <Outlet />
     </div>

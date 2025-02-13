@@ -13,6 +13,7 @@
 header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   padding: 10px 30px;
   background-color: var(--green);
@@ -20,4 +21,13 @@ header {
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   margin-bottom: 30px;
+}
+
+header > h1 {
+  font-size: larger;
+}
+
+.signBtn {
+  padding: 5px 10px;
+  border-radius: 3px;
 }

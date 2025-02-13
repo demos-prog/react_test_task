@@ -1,6 +1,23 @@
-.buttonsWrap{
+.buttonsWrap {
   display: flex;
   gap: 10px;
   align-items: center;
   padding-bottom: 30px;
+}
+
+.button {
+  padding: 5px 10px;
+  background-color: #ffb65e;
+  border-radius: 3px;
+  transition: 0.2s;
+}
+
+.button:hover {
+  background-color: #ff9d23;
+}
+
+.button:disabled,
+.button:disabled:hover {
+  background-color: #ffb65e;
+  cursor: default;
 }

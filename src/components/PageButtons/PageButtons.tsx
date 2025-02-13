@@ -1,4 +1,4 @@
-import css from './PageButtons.module.css';
+import css from "./PageButtons.module.css";
 
 type TypeName = {
   page: number;
@@ -17,13 +17,17 @@ const PageButtons: React.FC<TypeName> = ({ page, setPage, totalPages }) => {
 
   return (
     <div className={css.buttonsWrap}>
-      <button onClick={handlePrev} disabled={page === 1}>
+      <button className={css.button} onClick={handlePrev} disabled={page === 1}>
         Prev
       </button>
       <div>
         Page: {page} of {totalPages}
       </div>
-      <button onClick={handleNext} disabled={page === totalPages}>
+      <button
+        className={css.button}
+        onClick={handleNext}
+        disabled={page === totalPages}
+      >
         Next
       </button>
     </div>
