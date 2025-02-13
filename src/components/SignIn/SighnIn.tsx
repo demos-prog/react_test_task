@@ -1,12 +1,30 @@
 import { useState } from "react";
+import { useCreateUserMutation } from "../../api/users";
 import css from "./SignIn.module.css";
 
 const SighnIn: React.FC = () => {
   const [userName, setUserName] = useState("");
+  const [createUser, { data: user, isLoading, error }] =
+    useCreateUserMutation();
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (userName.length < 3) {
+      console.log("Username must be at least 3 characters long");
+      return;
+    }
+    createUser(userName);
+    if (user) {
+      console.log(user);
+    }
+    if (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className={css.formWrapper}>
-      <form>
+      <form onSubmit={handleSubmit}>
         <p>Register</p>
         <input
           placeholder="Enter your username"
@@ -20,8 +38,13 @@ const SighnIn: React.FC = () => {
           type="text"
           name="nameField"
           id="nameField"
+          disabled={isLoading}
         />
-        <input type="submit" value="Register" />
+        <input
+          type="submit"
+          value={isLoading ? "Registering..." : "Register"}
+          disabled={isLoading}
+        />
       </form>
     </div>
   );
