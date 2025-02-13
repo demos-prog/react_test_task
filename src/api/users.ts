@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import User from "../entities/User";
 
 export const userApi = createApi({
   reducerPath: "usersApi",
@@ -6,7 +7,7 @@ export const userApi = createApi({
     baseUrl: "https://jsonplaceholder.typicode.com",
   }),
   endpoints: (builder) => ({
-    createUser: builder.mutation<{ id: number }, string>({
+    createUser: builder.mutation<User, string>({
       query: (name) => ({
         url: `/users?username=${name}`,
         method: "POST",

@@ -7,18 +7,17 @@ const SighnIn: React.FC = () => {
   const [createUser, { data: user, isLoading, error }] =
     useCreateUserMutation();
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (userName.length < 3) {
       console.log("Username must be at least 3 characters long");
       return;
     }
-    createUser(userName);
-    if (user) {
-      console.log(user);
-    }
-    if (error) {
-      console.log(error);
+    try {
+      const result = await createUser(userName).unwrap();
+      console.log(result);
+    } catch (err) {
+      console.log('Failed to create user:', err);
     }
   };
 
