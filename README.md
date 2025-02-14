@@ -22,7 +22,7 @@ npm run docker
 
 2. navigate to `http://localhost:80` in browser
 
-3. To stop the conatiner run:
+3. To stop the conatainer run:
 
 ```bash
 docker-compose down
