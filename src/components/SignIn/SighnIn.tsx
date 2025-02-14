@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Bounce, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useCreateUserMutation } from "../../api/users";
 import css from "./SignIn.module.css";
 
@@ -8,10 +10,36 @@ const SighnIn: React.FC = () => {
   const [createUser, { isLoading }] = useCreateUserMutation();
   const navigate = useNavigate();
 
+  const notify = () =>
+    toast.info("Username must be at least 3 characters long", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      transition: Bounce,
+    });
+
+  const errNotify = () =>
+    toast.error("Failed to create user", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      transition: Bounce,
+    });
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (userName.length < 3) {
-      console.log("Username must be at least 3 characters long");
+      notify();
       return;
     }
     try {
@@ -20,7 +48,7 @@ const SighnIn: React.FC = () => {
         navigate("/");
       }
     } catch (err) {
-      console.log("Failed to create user:", err);
+      errNotify();
     }
   };
 
@@ -33,9 +61,7 @@ const SighnIn: React.FC = () => {
           value={userName}
           onChange={(e) => setUserName(e.target.value)}
           onBlur={(e) => {
-            if (e.target.value.length < 3) {
-              alert("Username must be at least 3 characters long");
-            }
+            if (e.target.value.length < 3) notify();
           }}
           type="text"
           name="nameField"
