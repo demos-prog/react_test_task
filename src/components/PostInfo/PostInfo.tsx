@@ -1,22 +1,32 @@
 import { useParams } from "react-router-dom";
+import { useGetPostByIdQuery } from "../../api/posts";
 import { useGetCommentsByIdQuery } from "../../api/comments";
 import css from "./PostInfo.module.css";
 
 const PostInfo: React.FC = () => {
   const { id } = useParams();
   const {
+    data: post,
+    isLoading: isLoadingPost,
+    error: postError,
+  } = useGetPostByIdQuery(id ?? "");
+  
+  const {
     data: comments,
-    isLoading,
-    error,
+    isLoading: isLoadingComments,
+    error: commentsError,
   } = useGetCommentsByIdQuery(id ?? "");
 
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error loading comments</div>;
-  if (!comments) return <div>No comments found</div>;
+  if (isLoadingPost || isLoadingComments) return <div>Loading...</div>;
+  if (postError || commentsError) return <div>Error loading data</div>;
+  if (!post || !comments) return <div>No data found</div>;
 
   return (
     <div>
-      <div>Product info: {id}</div>
+      <div className={css.postInfo}>
+        <h2>{post.title}</h2>
+        <p>{post.body}</p>
+      </div>
       <div>
         <h3>Comments:</h3>
         {comments.map((comment) => (
