@@ -22,18 +22,18 @@ const PostInfo: React.FC = () => {
   if (!post || !comments) return <div>No data found</div>;
 
   return (
-    <div>
+    <div className={css.postWrap}>
       <div className={css.postInfo}>
         <h2>{post.title}</h2>
         <p>{post.body}</p>
       </div>
-      <div>
+      <div className={css.commentsSection}>
         <h3>Comments:</h3>
         {comments.map((comment) => (
-          <div key={comment.id}>
+          <div key={comment.id} className={css.commentCard}>
             <h4>{comment.name}</h4>
             <p>{comment.body}</p>
-            <p>By: {comment.email}</p>
+            <p className={css.commentEmail}>By: {comment.email}</p>
           </div>
         ))}
       </div>

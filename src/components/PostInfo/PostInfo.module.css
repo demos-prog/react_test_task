@@ -1,0 +1,61 @@
+.postWrap{
+  padding: 20px;
+}
+
+.postInfo {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.postInfo h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.postInfo p {
+  color: #34495e;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.commentsSection {
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.commentsSection h3 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.commentCard {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.commentCard h4 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.commentCard p {
+  color: #34495e;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.commentEmail {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  font-style: italic;
+}
