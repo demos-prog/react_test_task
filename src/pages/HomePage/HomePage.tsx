@@ -1,6 +1,6 @@
 import { Outlet, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../store/store"; // You'll need to create this type
+import { RootState } from "../../store/store";
 import { logout } from "../../store/userSlice";
 import css from "./HomePage.module.css";
 
