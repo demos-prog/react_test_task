@@ -12,7 +12,7 @@ const HomePage: React.FC = () => {
   return (
     <div id={css.wrapper}>
       <header>
-        <h1>Some Blog</h1>
+        <h1 onClick={()=>navigate('/')}>Some Blog</h1>
         {currentUser ? (
           <>
             <span>Welcome, {currentUser.userName}!</span>
